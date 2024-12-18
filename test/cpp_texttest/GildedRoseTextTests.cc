@@ -20,7 +20,8 @@ int main()
     items.push_back({"Backstage passes to a TAFKAL80ETC concert", 5, 49});
 
     // this Conjured item doesn't yet work properly
-    items.push_back({"Conjured Mana Cake", 3, 6});
+    items.push_back({"Conjured", 3, 6});
+    // items.push_back({"Conjured item trial", 10, 52});
 
 	std::cout << "OMGHAI!" << std::endl;
 

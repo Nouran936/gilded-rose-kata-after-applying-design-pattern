@@ -1,3 +1,7 @@
+#ifndef GILDEDROSE_H
+#define GILDEDROSE_H
+
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -18,7 +22,8 @@ class GildedRose
 public:
     vector<Item> & items;
     GildedRose(vector<Item> & items);
-    
     void updateQuality();
 };
+
+#endif // GILDEDROSE_H
 
