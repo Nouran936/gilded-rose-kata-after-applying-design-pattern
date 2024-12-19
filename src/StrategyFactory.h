@@ -11,33 +11,34 @@
 #include "AgedBrieStrategy.h"
 #include "DefaultItemStrategy.h"
 
+
 class StrategyFactory
 {
     public:
-    // static UpdateStrategy* createStrategy(const std::string &itemName)
-    static std::unique_ptr<UpdateStrategy> createStrategy(const std::string& strategyType)
+    static UpdateStrategy* createStrategy(const std::string& strategyType)
     {
         if (strategyType == "Aged Brie")
         {
-            return std::make_unique<AgedBrieStrategy>();
+            return new AgedBrieStrategy();
         }
         else if (strategyType == "Backstage passes to a TAFKAL80ETC concert")
         {
-            return std::make_unique<BackstageStrategy>();
+            return new BackstageStrategy();
         }
         else if (strategyType == "Sulfuras, Hand of Ragnaros")
         {
-            return std::make_unique<SulfurasStrategy>();
+            return new SulfurasStrategy();
         }
         else if (strategyType == "Conjured")
         {
-            return std::make_unique<ConjuredStrategy>();
+            return new ConjuredStrategy();
         }
         else
         {
-            return std::make_unique<DefaultItemStrategy>();
+            return new DefaultItemStrategy();
         }
     }
 };
 
 #endif //STRATEGYFACTORY_H
+

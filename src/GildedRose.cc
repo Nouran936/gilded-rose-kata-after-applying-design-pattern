@@ -10,10 +10,12 @@ void GildedRose::updateQuality()
 {
     for (auto &item : items)
     {
-        std::unique_ptr<UpdateStrategy> strategy = StrategyFactory::createStrategy(item.name);
+        UpdateStrategy* strategy = StrategyFactory::createStrategy(item.name);
+
         if (strategy)
         {
             strategy->updateQuality(item);
+            delete strategy;
         }
     }
 }
